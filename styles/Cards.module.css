@@ -1,0 +1,33 @@
+.page_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.page_title {
+    font-family: 'Playfair Display';
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #424242;
+    margin: 0 0.6rem;
+    text-decoration: none;
+}
+
+.page_sub {
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 600;
+    color: #424242;
+    margin: 1rem 0.6rem;
+    text-decoration: none;
+}
+
+.cards_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1200px;
+}

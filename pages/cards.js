@@ -1,5 +1,6 @@
 import { createClient } from 'contentful'
 import CardItem from '../components/CardItem'
+import styles from '../styles/Cards.module.css'
 
 export async function getStaticProps() {
     const client = createClient({
@@ -21,11 +22,11 @@ export default function Cards({ cards }) {
     console.log(cards)
     return (
         <div>
-            <div>
-                <h1>Discover other cards</h1>
-                <p>Have a look at cards other users.</p>
+            <div className={styles.page_header}>
+                <h1 className={styles.page_title}>Discover other cards</h1>
+                <p className={styles.page_sub}>Have a look at cards other users.</p>
             </div>
-            <div className="cards-list">
+            <div className={styles.cards_list}>
                 {cards.map(card => (
                     <CardItem key={card.sys.id} card={card}/>
                 ))}
