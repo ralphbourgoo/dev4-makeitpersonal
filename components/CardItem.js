@@ -6,8 +6,8 @@ import styles from './CardItem.module.css'
 export default function CardItem({ card }) {
     const { title, slug, receiver, sender, message, image } = card.fields
     return (
-        <div className="carditem">
-            <div className="carditem_image">
+        <div className={styles.carditem}>
+            <div className={styles.carditem_image}>
                 <Image
                     src={'https:' + image.fields.file.url}
                     width={image.fields.file.details.image.width}
@@ -16,11 +16,11 @@ export default function CardItem({ card }) {
                 />
             </div>
             <div className="content">
-                <h2>{title}</h2>
-                <p>from {sender}</p>
+                <h2 className={styles.carditem_title}>{title}</h2>
+                <p className={styles.carditem_sender}>from {sender}</p>
             </div>
             <div>
-                <Link href={'/cards/' + slug}><a>Look at card</a></Link>
+                <Link href={'/cards/' + slug}><a className={styles.carditem_button}>Look at card</a></Link>
             </div>
         </div>
     )
