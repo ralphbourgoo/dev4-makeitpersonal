@@ -1,8 +1,13 @@
 import Link from 'next/link'
+import Head from 'next/head'
 
 export default function Layout({ children }) {
     return (
         <div className="layout">
+            <Head>
+                <title>Mothersday Card</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <header>
                 <p>Logo</p>
                 <Link href="/">
