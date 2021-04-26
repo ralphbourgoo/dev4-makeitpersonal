@@ -1,0 +1,56 @@
+.card {
+    background-color: #FFF9F2;
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+    max-width: 70rem;
+    margin: 0 auto;
+
+}
+
+.card_image {
+    max-width: 30rem;
+}
+
+.card_title {
+    font-family: 'Playfair Display';
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #F2C8C9;
+    margin-top: 4rem;
+}
+
+.card_receiver {
+    font-family: 'Playfair Display';
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #F2C8C9;
+    margin: 0 0.6rem;
+    text-decoration: none;
+}
+
+.card_content {
+    margin-left: 6rem;
+}
+
+.card_sender {
+    font-family: 'Playfair Display';
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #F2C8C9;
+    margin: 0 0.6rem;
+}
+
+.card_message {
+    font-family: 'Poppins';
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-weight: 200;
+    color: #424242;
+    margin: 2rem 0.6rem;
+}
+
+.card_heart {
+    display: flex;
+    justify-content: flex-end;
+}
