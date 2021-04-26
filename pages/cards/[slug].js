@@ -1,4 +1,6 @@
 import { createClient } from 'contentful'
+import Image from 'next/image'
+import React from 'react'
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -34,11 +36,30 @@ export async function getStaticProps({ params }) {
     }
 }
 
-export default function CardDetails(card) {
+export default function CardDetails({ card }) {
     console.log(card)
+    // const { title, slug, receiver, sender, message, image } = card.fields
+    const { image, title, receiver, sender, message} = card.fields
+
     return (
         <div>
-            
+            <div className="card">
+                <div>
+                    <Image
+                        src={'https:' + image.fields.file.url}
+                        width={image.fields.file.details.image.width}
+                        height={image.fields.file.details.image.height}
+                    />
+                </div>
+                <div>
+                    <h2>{title}</h2>
+                    <div>
+                        <p>{receiver}</p>
+                        <p>{message}</p>
+                        <p>{sender}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
