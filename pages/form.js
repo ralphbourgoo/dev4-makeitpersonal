@@ -1,3 +1,5 @@
+import AddCard from '../components/AddCard'
+
 const Form = () => {
     return ( 
         <div>
@@ -6,7 +8,7 @@ const Form = () => {
                 <p>Fill in the form to send a mothersday card</p>
             </div>
             <div>
-                
+                <AddCard />
             </div>
         </div>
      );
