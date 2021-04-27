@@ -13,7 +13,8 @@ export async function getStaticProps() {
     return {
         props: {
             cards: res.items
-        }
+        },
+        revalidate: 5
     }
 }
 
