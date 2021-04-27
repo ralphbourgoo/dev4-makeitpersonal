@@ -81,24 +81,24 @@ const AddCard = ({ onSubmit }) => {
     // }
     
     return ( 
-        <section>
-            <h3>Add comment</h3>
+        <div>
+            <h3 className={styles.hidden}>Add comment</h3>
             <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
                 <label className={styles.label}>Title:
-                   <input type="text" name="title" required />
+                   <input className={styles.input} type="text" name="title" required />
                 </label>
                 <label className={styles.label}>To:
-                   <input type="text" name="receiver" required />
+                   <input className={styles.input} type="text" name="receiver" required />
                 </label>
                 <label className={styles.label}>From:
-                   <input type="text" name="sender" required />
+                   <input className={styles.input} type="text" name="sender" required />
                 </label>
                 <label className={styles.label}> Message:
-                    <textarea name="message" required maxLength="500"></textarea>
+                    <textarea className={styles.message} name="message" required maxLength="500"></textarea>
                 </label>
-                <input type="submit" value="Send" />
+                <input className={styles.submit} type="submit" value="Send" />
             </form>
-        </section>
+        </div>
      );
 }
  

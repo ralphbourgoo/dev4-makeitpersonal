@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.page_title {
+    font-family: 'Playfair Display';
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #424242;
+    margin: 0 0.6rem;
+}
+
+.page_sub {
+    font-family: 'Poppins';
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #424242;
+    margin: 1rem 0.6rem;
+}
