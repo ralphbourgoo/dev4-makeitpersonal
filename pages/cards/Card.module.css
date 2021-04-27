@@ -5,7 +5,12 @@
     padding: 3rem;
     max-width: 70rem;
     margin: 0 auto;
+    width: 90vw;
+}
 
+.wrapper {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .card_image {

@@ -43,7 +43,7 @@ export default function CardDetails({ card }) {
     const { image, title, receiver, sender, message} = card.fields
 
     return (
-        <div>
+        <div className={styles.wrapper}>
             <div className={styles.card}>
                 <div className={styles.card_image}>
                     <Image
