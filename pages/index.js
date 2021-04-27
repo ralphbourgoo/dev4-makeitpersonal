@@ -7,7 +7,7 @@ export default function Home() {
     <div className={styles.home_container}>
       <div className={styles.home_header}>
         <h1 className={styles.home_title}>Happy Mothersday !</h1>
-        <p className={styles.home_sub}>Send a motherdays card to you mother to wish her the best motherday !</p>
+        <p className={styles.home_sub}>Send a motherdays card to your mother, to wish her the best motherday !</p>
       </div>
       <div className={styles.home_img}>
         <Image

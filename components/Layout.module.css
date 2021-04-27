@@ -43,6 +43,33 @@
 .navlink {
     font-family: 'Poppins';
     font-size: 1rem;
-    font-weight: 200;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    padding-bottom: .4rem;
+    border-bottom: .2rem solid #FFCDB6;
+    transition: .5s;
+}
+
+.navlink:hover {
+    border-bottom: .2rem solid white;
+}
+
+.navbutton {
+    background-color: white;
+    color: #FFCDB6;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    margin-left: 2rem;
+    border: .2rem solid white;
+    transition: .5s;
+}
+
+.navbutton:hover {
+    background-color: #FFCDB6;
     color: white;
 }
