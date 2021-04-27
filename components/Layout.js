@@ -14,10 +14,10 @@ export default function Layout({ children }) {
                     <Link href="/"><a className={styles.logo}>Mothersday  Card</a></Link>
                 </div>
                 <div>
-                    <Link href="/"><a>Home</a></Link>
-                    <Link href="/about"><a>About</a></Link>
-                    <Link href="/cards"><a>All Cards</a></Link>
-                    <Link href="/form"><a>Send a card</a></Link>
+                    <Link href="/"><a className={styles.navlink}>Home</a></Link>
+                    <Link href="/about"><a className={styles.navlink}>About</a></Link>
+                    <Link href="/cards"><a className={styles.navlink}>All Cards</a></Link>
+                    <Link href="/form"><a className={styles.navbutton}>>Send a card</a></Link>
                 </div>
             </header>
 
