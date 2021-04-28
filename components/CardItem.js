@@ -8,12 +8,11 @@ export default function CardItem({ card }) {
     return (
         <div className={styles.carditem}>
             <div className={styles.carditem_image}>
-                <Image
+                {/* <Image
                     src={'https:' + image.fields.file.url}
                     width={image.fields.file.details.image.width}
                     height={image.fields.file.details.image.height}
-                    className
-                />
+                /> */}
             </div>
             <div className="content">
                 <h2 className={styles.carditem_title}>{title}</h2>
