@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import styles from './Card.module.css'
 import Link from 'next/link'
+import Skeleton from '../../components/Skeleton'
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -22,7 +23,7 @@ export const getStaticPaths = async () => {
 
     return {
         paths,
-        fallback: false
+        fallback: true
     }
 
 }
@@ -40,6 +41,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function CardDetails({ card }) {
+    if (!card) return <Skeleton />
     console.log(card)
     const { image, title, receiver, sender, message} = card.fields
 

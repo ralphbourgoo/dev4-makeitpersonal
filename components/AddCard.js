@@ -43,10 +43,10 @@ const AddCard = ({ onSubmit }) => {
             message: e.target.message.value,
         };
         // console.log(JSON);
-        // let response = null;
+        let response = null;
 
         if (data) {
-            const response = await fetch("/api/send", {
+            response = await fetch("/api/send", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
