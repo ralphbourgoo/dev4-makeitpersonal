@@ -12,6 +12,9 @@ export default function Skeleton() {
             <div className={styles.content}>
 
             </div>
+            <div className={styles.content}>
+
+            </div>
         </div>
     )
 }
