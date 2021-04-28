@@ -17,7 +17,7 @@ export const getStaticPaths = async () => {
 
     const paths = res.items.map(item => {
         return {
-            params: {slug: item.fields.slug}
+            params: { slug: item.fields.slug }
         }
     })
 
@@ -33,6 +33,8 @@ export async function getStaticProps({ params }) {
         content_type: 'cards',
         'fields.slug': params.slug
     })
+
+    console.log(items)
 
     if (!items.length) {
         return {
@@ -52,17 +54,16 @@ export async function getStaticProps({ params }) {
 export default function CardDetails({ card }) {
     if (!card) return <Skeleton />
     console.log(card)
-    const { image, title, receiver, sender, message} = card.fields
-
+    const { image, title, receiver, sender, message, slug } = card.fields
     return (
         <div className={styles.wrapper}>
             <div className={styles.card}>
                 <div className={styles.card_image}>
-                    <Image
+                    {/* <Image
                         src={'https:' + image.fields.file.url}
                         width={image.fields.file.details.image.width}
                         height={image.fields.file.details.image.height}
-                    />
+                    /> */}
                 </div>
                 <div className={styles.card_content}>
                     <h2 className={styles.card_title}>{title}</h2>
@@ -74,7 +75,7 @@ export default function CardDetails({ card }) {
                     <div className={styles.card_heart}>
                         <Image
                             src='/heart.svg'
-                            alt= 'Love Mom Heart'
+                            alt='Love Mom Heart'
                             width='150'
                             height='150'
                         />
@@ -83,7 +84,7 @@ export default function CardDetails({ card }) {
             </div>
             <div>
                 <h2>Share this link to send your mother the card:</h2>
-                <p>https://leho-howest.instructure.com/courses/9545/assignments/68575</p>
+                <p>{`http://localhost:3000/cards/${slug}`}</p>
             </div>
         </div>
     )

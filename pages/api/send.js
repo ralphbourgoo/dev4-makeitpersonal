@@ -1,40 +1,4 @@
 import { createClient } from 'contentful'
-import Cards from '../cards';
-
-// export default async (req, res) => {
-//     if (req.method === "POST") {
-
-//         const client = contentful.createClient({
-//             // space: process.env.CONTENTFUL_SPACE_ID,
-//             accessToken: process.env.CONTENTFUL_API_KEY,
-//         });
-
-//         console.log(req.body)
-
-//         const res = await client.getSpace(process.env.CONTENTFUL_SPACE_ID)
-//             .then((space) => space.getEnvironment('master'))
-//             .then((environment) => environment.createEntry('cards', {
-//                 fields: req.body
-//             }))
-//             .then((entry) => console.log(entry))
-//             .catch(console.error)
-//     } else {
-//         res.setHeader("Allow", ["POST"]);
-//         res.status(405).end(`Method ${method} Not Allowed`);
-//     }
-
-//     // console.log(req.body);
-//     // if (req.method === "POST") {
-//     //     fetch(`https://api.contentful.com/spaces/{ space_id } /environments/{ environment_id } /entries`), {
-//     //         method: "POST",
-//     //         headers: {
-//     //             "Content-Type": "application/json",
-//     //             Authorization: `Token ${process.env.CONTENTFUL_API_KEY}`,
-//     //         },
-//     //         body: JSON.stringify(req.body),
-//     //     }
-//     // }
-// }
 
 export default async (req, res) => {
     if (req.method === "POST") {
@@ -50,16 +14,21 @@ export default async (req, res) => {
                     },
                     body: JSON.stringify({
                         fields: {
-                            title: {"en-US": req.body.title},
-                            receiver: { "en-US": req.body.receiver},
-                            sender: { "en-US":req.body.sender},
-                            message: { "en-US":req.body.message}
-                    } }),
+                            title: { "en-US": req.body.title },
+                            receiver: { "en-US": req.body.receiver },
+                            sender: { "en-US": req.body.sender },
+                            message: { "en-US": req.body.message },
+                            slug: { "en-US": req.body.slug },
+                            //image: { "en-US": req.body.image }
+                        }
+                    }),
                 }
             );
-            console.log(response);
             if (response.status === 201) {
-                res.status(200).json({ succeeded: true, response: response.json() });
+                const data = await response.json();
+                handlePublishing(data.sys.id).then(() => {
+                    res.status(200).json({ succeeded: true });
+                });
             } else {
                 const result = await response.json();
                 console.log(result, result.details.errors[0])
@@ -80,3 +49,21 @@ export default async (req, res) => {
         res.status(405).end(`Method ${method} Not Allowed`);
     }
 };
+
+const handlePublishing = async (entry_id) => {
+    const publish = await fetch(
+        `https://api.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master/entries/${entry_id}/published`,
+        {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/vnd.contentful.management.v1+json",
+                "X-Contentful-Content-Type": "cards",
+                "X-Contentful-Version": 1,
+                Authorization: `Bearer ${process.env.CONTENTFUL_API_KEY}`,
+            },
+        }
+    );
+
+    const data = await publish.json();
+    console.log('publish data', data);
+}
