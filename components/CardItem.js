@@ -4,12 +4,12 @@ import Image from 'next/image'
 import styles from './CardItem.module.css'
 
 export default function CardItem({ card }) {
-    const { title, slug, receiver, sender, message, image } = card.fields
+    const { title, slug, sender, imagejson } = card.fields
     return (
         <div className={styles.carditem}>
             <div className={styles.carditem_image}>
                 <Image
-                    src={'/kidandmom.jpg'}
+                    src={'/heart.svg'}
                     width={300}
                     height={300}
                 />

@@ -2,7 +2,6 @@ import { createClient } from 'contentful'
 import Image from 'next/image'
 import React from 'react'
 import styles from './Card.module.css'
-import Link from 'next/link'
 import Skeleton from '../../components/Skeleton'
 
 const client = createClient({
@@ -55,14 +54,14 @@ export default function CardDetails({ card }) {
     if (!card) return <Skeleton />
     console.log(card)
     const { imagejson, title, receiver, sender, message, slug } = card.fields
-    console.log(imagejson)
+    console.log('url', imagejson.url)
     return (
         <div className={styles.wrapper}>
             <div className={styles.card}>
                 <div className={styles.card_image}>
                     <Image
                         src={imagejson.url}
-                        alt='Love Mom Heart'
+                        alt='Cloudinary Image'
                         width='500'
                         height='500'
                     />
