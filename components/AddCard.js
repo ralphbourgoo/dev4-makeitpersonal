@@ -4,10 +4,10 @@ import { useRouter } from 'next/router'
 import CardDetails from '../pages/cards/[slug]';
 import React, { useState } from 'react';
 import Image from 'next/image'
-
 const AddCard = ({ onSubmit }) => {
     const [image, setImage] = useState('')
     const [loading, setLoading] = useState(false)
+    const [file, setFile] = useState(false)
     const uploadImage = async (e) => {
         const files = e.target.files
         const data = new FormData()
@@ -21,14 +21,19 @@ const AddCard = ({ onSubmit }) => {
                 body: data
             }
         )
-        const file = await res.json()
+        const response = await res.json().then(data => {
+            setImage(data.secure_url)
+            setLoading(false)
+            setFile(data)
+        });
 
-        setImage(file.secure_url)
-        setLoading(false)
+
+
     }
     const router = useRouter();
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log('file', file);
         const slug = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
         const data = {
             title: e.target.title.value,
@@ -36,7 +41,7 @@ const AddCard = ({ onSubmit }) => {
             sender: e.target.sender.value,
             message: e.target.message.value,
             slug: slug,
-            imagejson: imagejson,
+            imagejson: file,
         };
         // console.log(JSON);
         let response = null;
@@ -74,12 +79,12 @@ const AddCard = ({ onSubmit }) => {
                     <textarea className={styles.message} name="message" required maxLength="500" id="message"></textarea>
                 </label>
                 <label className={styles.label}> Place Your Image:
-                    <input  onChange={uploadImage} name="imagejson" placeholder="Upload an image" accept=".jpg, .png, .jpeg" type="file" id="imagejson"></input>
+                    <input onChange={uploadImage} name="imagejson" placeholder="Upload an image" accept=".jpg, .png, .jpeg" type="file" id="imagejson"></input>
                     {loading ? (
                         <h3>Loading ...</h3>
                     ) : (
-                        <img src={image} style={{ width: '300px' }} />
-                    )}
+                            <img src={image} style={{ width: '300px' }} />
+                        )}
                 </label>
                 <input
                     //onClick={() => (router.push({ pathname: '/cards/[slug]', query: { slug: slug }, }))}

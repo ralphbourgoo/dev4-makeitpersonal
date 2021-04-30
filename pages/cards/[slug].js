@@ -55,15 +55,16 @@ export default function CardDetails({ card }) {
     if (!card) return <Skeleton />
     console.log(card)
     const { imagejson, title, receiver, sender, message, slug } = card.fields
+    console.log(imagejson)
     return (
         <div className={styles.wrapper}>
             <div className={styles.card}>
                 <div className={styles.card_image}>
                     <Image
-                        src='/kidandmom.jpg'
+                        src={imagejson.secure_url}
                         alt='Love Mom Heart'
                         width='500'
-                        height='350'
+                        height='500'
                     />
                     {/* <Image
                         src={'https:' + image.fields.file.url}
