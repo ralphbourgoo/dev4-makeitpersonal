@@ -11,9 +11,8 @@
     font-size: 1rem;
     font-weight: 200;
     color: #424242;
-    margin: 1rem 0.6rem;
-    text-align: center;
-    max-width: 45rem;
+    margin: 1rem 0;
+    max-width: 30rem;
     width: 90vw;
 }
 
@@ -27,8 +26,92 @@
 }
 
 .img {
-    max-width: 40rem;
+    max-width: 35rem;
     width: 90vw;
     margin-top: 1rem;
     margin-bottom: 3rem;
+    margin-right: 3rem;
+}
+
+.sub {
+    font-family: 'Playfair Display';
+    font-size: 2rem;
+    font-weight: 900;
+    color: #424242;
+    margin: 1rem 0;
+}
+
+.section_wrapper {
+   display: flex;
+   justify-content: center;
+}
+
+.step_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem 0;
+}
+
+.steps_wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 4rem;
+    width: 90vw;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.step {
+    background-color: #FFEEE6;
+    padding: 2rem;
+    border: .2rem solid #424242;
+    transition: .5s;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.step:hover {
+    transform: scale(1.03);
+    background-color: #FFCDB6;
+}
+
+.sub_step {
+    font-family: 'Playfair Display';
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #424242;
+}
+
+.step_text {
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 200;
+    color: #424242;
+}
+
+.button {
+    background-color: #FFCDB6;
+    color: #424242;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border: .2rem solid #424242;
+    transition: .5s;
+    margin-top: 3rem;
+}
+
+.button:hover {
+    color: #424242;
+    background-color: #FFEEE6;
+}
+
+.button_wrap {
+    margin-top: 3rem;
 }
