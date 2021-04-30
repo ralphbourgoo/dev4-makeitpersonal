@@ -1,5 +1,4 @@
 import styles from './AddCard.module.css'
-import { createClient } from 'contentful'
 import { useRouter } from 'next/router'
 import CardDetails from '../pages/cards/[slug]';
 import React, { useState } from 'react';
@@ -79,11 +78,11 @@ const AddCard = ({ onSubmit }) => {
                     <textarea className={styles.message} name="message" required maxLength="500" id="message"></textarea>
                 </label>
                 <label className={styles.label}> Place Your Image:
-                    <input onChange={uploadImage} name="imagejson" placeholder="Upload an image" accept=".jpg, .png, .jpeg" type="file" id="imagejson"></input>
+                    <input onChange={uploadImage} className={styles.upload} name="imagejson" placeholder="Upload an image" accept=".jpg, .png, .jpeg" type="file" id="imagejson"></input>
                     {loading ? (
                         <h3>Loading ...</h3>
                     ) : (
-                            <img src={image} style={{ width: '300px' }} />
+                            <img src={image} style={{ width: '200px' }} />
                         )}
                 </label>
                 <input
@@ -96,33 +95,3 @@ const AddCard = ({ onSubmit }) => {
 }
 
 export default AddCard;
-
-// export async function getStaticProps() {
-
-//     const client = createClient({
-//         accessToken: 'CFPAT-NjcVpRSXie0TpQLtXrfaOm3gu1_S3DD_0lJtE96rj8E'
-//     });
-
-//     // Create entry
-
-//     client.getSpace('vhwgfyhqacqw')
-//         .then((space) => space.getEnvironment('master'))
-//         .then((environment) => environment.createEntry('cards', {
-//             fields: {
-//                 title: {
-//                     'en-US': 'Entry title'
-//                 },
-//                 receiver: {
-//                     'en-US': 'Entry receiver'
-//                 },
-//                 sender: {
-//                     'en-US': 'Entry sender'
-//                 },
-//                 message: {
-//                     'en-US': 'Entry message'
-//                 },
-//             }
-//         }))
-//         .then((entry) => console.log(entry))
-//         .catch(console.error)
-// 
