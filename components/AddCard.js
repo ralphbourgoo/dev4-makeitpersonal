@@ -22,7 +22,7 @@ const AddCard = ({ onSubmit }) => {
             }
         )
         const response = await res.json().then(data => {
-            setImage(data.secure_url)
+            setImage(data.url)
             setLoading(false)
             setFile(data)
         });
