@@ -19,7 +19,7 @@ export default async (req, res) => {
                             sender: { "en-US": req.body.sender },
                             message: { "en-US": req.body.message },
                             slug: { "en-US": req.body.slug },
-                            //image: { "en-US": req.body.image }
+                            imagejson: { "en-US": req.body.imagejson }
                         }
                     }),
                 }

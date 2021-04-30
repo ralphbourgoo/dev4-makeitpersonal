@@ -54,11 +54,17 @@ export async function getStaticProps({ params }) {
 export default function CardDetails({ card }) {
     if (!card) return <Skeleton />
     console.log(card)
-    const { image, title, receiver, sender, message, slug } = card.fields
+    const { imagejson, title, receiver, sender, message, slug } = card.fields
     return (
         <div className={styles.wrapper}>
             <div className={styles.card}>
                 <div className={styles.card_image}>
+                    <Image
+                        src='/kidandmom.jpg'
+                        alt='Love Mom Heart'
+                        width='500'
+                        height='350'
+                    />
                     {/* <Image
                         src={'https:' + image.fields.file.url}
                         width={image.fields.file.details.image.width}
@@ -82,9 +88,10 @@ export default function CardDetails({ card }) {
                     </div>
                 </div>
             </div>
-            <div>
-                <h2>Share this link to send your mother the card:</h2>
-                <p>{`http://localhost:3000/cards/${slug}`}</p>
+            <div className={styles.link_wrapper}>
+                <h2 className={styles.link_title}>Share this link</h2>
+                <p className={styles.text}>Share this link, to send your mother the personalised card. Have a great mothersday !</p>
+                <p className={styles.link}>{`http://localhost:3000/cards/${slug}`}</p>
             </div>
         </div>
     )

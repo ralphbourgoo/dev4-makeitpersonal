@@ -8,6 +8,11 @@ export default function CardItem({ card }) {
     return (
         <div className={styles.carditem}>
             <div className={styles.carditem_image}>
+                <Image
+                    src={'/kidandmom.jpg'}
+                    width={300}
+                    height={300}
+                />
                 {/* <Image
                     src={'https:' + image.fields.file.url}
                     width={image.fields.file.details.image.width}

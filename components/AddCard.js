@@ -2,38 +2,30 @@ import styles from './AddCard.module.css'
 import { createClient } from 'contentful'
 import { useRouter } from 'next/router'
 import CardDetails from '../pages/cards/[slug]';
-
-// export async function getStaticProps() {
-
-//     const client = createClient({
-//         accessToken: 'CFPAT-NjcVpRSXie0TpQLtXrfaOm3gu1_S3DD_0lJtE96rj8E'
-//     });
-
-//     // Create entry
-
-//     client.getSpace('vhwgfyhqacqw')
-//         .then((space) => space.getEnvironment('master'))
-//         .then((environment) => environment.createEntry('cards', {
-//             fields: {
-//                 title: {
-//                     'en-US': 'Entry title'
-//                 },
-//                 receiver: {
-//                     'en-US': 'Entry receiver'
-//                 },
-//                 sender: {
-//                     'en-US': 'Entry sender'
-//                 },
-//                 message: {
-//                     'en-US': 'Entry message'
-//                 },
-//             }
-//         }))
-//         .then((entry) => console.log(entry))
-//         .catch(console.error)
-// }
+import React, { useState } from 'react';
+import Image from 'next/image'
 
 const AddCard = ({ onSubmit }) => {
+    const [image, setImage] = useState('')
+    const [loading, setLoading] = useState(false)
+    const uploadImage = async (e) => {
+        const files = e.target.files
+        const data = new FormData()
+        data.append('file', files[0])
+        data.append('upload_preset', 'mothersday')
+        setLoading(true)
+        const res = await fetch(
+            'https://api.cloudinary.com/v1_1/dnv4woiu7/image/upload',
+            {
+                method: 'POST',
+                body: data
+            }
+        )
+        const file = await res.json()
+
+        setImage(file.secure_url)
+        setLoading(false)
+    }
     const router = useRouter();
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -43,8 +35,8 @@ const AddCard = ({ onSubmit }) => {
             receiver: e.target.receiver.value,
             sender: e.target.sender.value,
             message: e.target.message.value,
-            image: e.target.image.value,
-            slug: slug
+            slug: slug,
+            imagejson: imagejson,
         };
         // console.log(JSON);
         let response = null;
@@ -82,7 +74,12 @@ const AddCard = ({ onSubmit }) => {
                     <textarea className={styles.message} name="message" required maxLength="500" id="message"></textarea>
                 </label>
                 <label className={styles.label}> Place Your Image:
-                    <input className={styles.message} name="image" accept=".jpg, .png, .jpeg" type="file" id="image"></input>
+                    <input  onChange={uploadImage} name="imagejson" placeholder="Upload an image" accept=".jpg, .png, .jpeg" type="file" id="imagejson"></input>
+                    {loading ? (
+                        <h3>Loading ...</h3>
+                    ) : (
+                        <img src={image} style={{ width: '300px' }} />
+                    )}
                 </label>
                 <input
                     //onClick={() => (router.push({ pathname: '/cards/[slug]', query: { slug: slug }, }))}
@@ -94,3 +91,33 @@ const AddCard = ({ onSubmit }) => {
 }
 
 export default AddCard;
+
+// export async function getStaticProps() {
+
+//     const client = createClient({
+//         accessToken: 'CFPAT-NjcVpRSXie0TpQLtXrfaOm3gu1_S3DD_0lJtE96rj8E'
+//     });
+
+//     // Create entry
+
+//     client.getSpace('vhwgfyhqacqw')
+//         .then((space) => space.getEnvironment('master'))
+//         .then((environment) => environment.createEntry('cards', {
+//             fields: {
+//                 title: {
+//                     'en-US': 'Entry title'
+//                 },
+//                 receiver: {
+//                     'en-US': 'Entry receiver'
+//                 },
+//                 sender: {
+//                     'en-US': 'Entry sender'
+//                 },
+//                 message: {
+//                     'en-US': 'Entry message'
+//                 },
+//             }
+//         }))
+//         .then((entry) => console.log(entry))
+//         .catch(console.error)
+// 

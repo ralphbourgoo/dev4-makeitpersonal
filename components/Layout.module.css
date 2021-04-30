@@ -2,15 +2,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FFCDB6;
+    /* background-color: #FFCDB6; */
     padding: 2rem;
+    width: 90vw;
+    max-widtth: 100rem;
+    margin: 0 auto;
+    border-bottom: .15rem solid #FFCDB6;
 }
 
 .logo {
     font-family: 'Playfair Display';
     font-size: 2rem;
     font-weight: 900;
-    color: white;
+    color: #FFCDB6;
     margin: 0 0.6rem;
     text-decoration: none;
 }
@@ -44,7 +48,7 @@
     font-family: 'Poppins';
     font-size: 1rem;
     font-weight: 600;
-    color: white;
+    color: #FFCDB6;
     text-decoration: none;
     margin-left: 2rem;
     padding-bottom: .4rem;
@@ -53,7 +57,7 @@
 }
 
 .navlink:hover {
-    border-bottom: .2rem solid white;
+    border-bottom: .2rem solid #FFCDB6;
 }
 
 .navbutton {

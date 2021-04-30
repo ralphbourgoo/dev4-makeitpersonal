@@ -6,6 +6,7 @@
     max-width: 70rem;
     margin: 0 auto;
     width: 90vw;
+    border: .3rem solid #F2C8C9;
 }
 
 .wrapper {
@@ -29,20 +30,20 @@
     font-family: 'Playfair Display';
     font-size: 1.8rem;
     font-weight: 900;
-    color: #F2C8C9;
+    color: #424242;
     margin: 0 0.6rem;
     text-decoration: none;
 }
 
 .card_content {
-    margin-left: 6rem;
+    margin-left: 4rem;
 }
 
 .card_sender {
     font-family: 'Playfair Display';
     font-size: 1.8rem;
     font-weight: 900;
-    color: #F2C8C9;
+    color: #424242;
     margin: 0 0.6rem;
 }
 
@@ -58,4 +59,39 @@
 .card_heart {
     display: flex;
     justify-content: flex-end;
+}
+
+.link_wrapper {
+    max-width: 70rem;
+    margin: 0 auto;
+    width: 90vw;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.link_title {
+    font-family: 'Playfair Display';
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #424242;
+    margin: 0 0.6rem;
+}
+
+.link {
+    background-color: #FFF9F2;
+    padding: 1.5rem 2rem;
+    border: .3rem solid #F2C8C9;
+    color: #F2C8C9;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 600;
+}
+
+.text {
+    font-family: 'Poppins';
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 200;
+    color: #424242;
 }
