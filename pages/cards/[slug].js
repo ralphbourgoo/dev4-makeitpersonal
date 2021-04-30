@@ -61,7 +61,7 @@ export default function CardDetails({ card }) {
             <div className={styles.card}>
                 <div className={styles.card_image}>
                     <Image
-                        src={imagejson.secure_url}
+                        src={imagejson.url}
                         alt='Love Mom Heart'
                         width='500'
                         height='500'
