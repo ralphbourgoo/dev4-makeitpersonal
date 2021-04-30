@@ -7,14 +7,14 @@
     width: 90vw;
     max-widtth: 100rem;
     margin: 0 auto;
-    border-bottom: .15rem solid #FFCDB6;
+    border-bottom: .15rem solid #424242;
 }
 
 .logo {
     font-family: 'Playfair Display';
     font-size: 2rem;
     font-weight: 900;
-    color: #FFCDB6;
+    color: #424242;
     margin: 0 0.6rem;
     text-decoration: none;
 }
@@ -48,32 +48,32 @@
     font-family: 'Poppins';
     font-size: 1rem;
     font-weight: 600;
-    color: #FFCDB6;
+    color: #424242;
     text-decoration: none;
     margin-left: 2rem;
     padding-bottom: .4rem;
-    border-bottom: .2rem solid #FFCDB6;
+    border-bottom: .2rem solid #FFEEE6;
     transition: .5s;
 }
 
 .navlink:hover {
-    border-bottom: .2rem solid #FFCDB6;
+    border-bottom: .2rem solid #424242;
 }
 
 .navbutton {
-    background-color: white;
-    color: #FFCDB6;
+    background-color: #FFCDB6;
+    color: #424242;
     font-family: 'Poppins';
     font-size: 1rem;
     font-weight: 600;
     padding: 1rem 1.5rem;
     text-decoration: none;
     margin-left: 2rem;
-    border: .2rem solid white;
+    border: .2rem solid #424242;
     transition: .5s;
 }
 
 .navbutton:hover {
-    background-color: #FFCDB6;
-    color: white;
+    background-color: #FFEEE6;
+    color: #424242;
 }

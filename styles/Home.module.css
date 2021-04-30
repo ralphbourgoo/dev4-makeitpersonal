@@ -2,24 +2,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     margin-top: 3rem;
     margin-bottom: 3rem;
+    max-width: 90rem;
+    margin: 3rem auto;
 }
 
 .home_header {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
+    max-width: 40rem;
+    width: 90vw;
 }
 
 .home_title {
     font-family: 'Playfair Display';
-    font-size: 2.5rem;
+    font-size: 4rem;
     font-weight: 900;
     color: #424242;
-    margin: 0 0.6rem;
+    margin-bottom: .7rem;
+    width: 30rem;
+}
+
+.text {
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 200;
+    color: #424242;
+    margin-bottom: 3rem;
 }
 
 .home_sub {
@@ -27,29 +39,29 @@
     font-size: 1.1rem;
     font-weight: 600;
     color: #424242;
-    margin: 1rem 0.6rem;
+    margin-bottom: .3rem;
 }
 
 .home_img {
-    max-width: 50rem;
+    max-width: 41rem;
     width: 90vw;
     margin-top: 1rem;
     margin-bottom: 3rem;
 }
 
 .home_button {
-    padding: 1rem 1.5rem;
-    background-color: #F2C8C9;
-    border: .2rem solid #F2C8C9;
-    text-decoration: none;
-    color: white;
+    background-color: #FFCDB6;
+    color: #424242;
     font-family: 'Poppins';
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border: .2rem solid #424242;
     transition: .5s;
 }
 
 .home_button:hover {
-    color: #F2C8C9;
+    color: #424242;
     background-color: #FFEEE6;
 }
