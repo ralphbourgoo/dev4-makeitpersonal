@@ -54,6 +54,7 @@
     font-weight: 200;
     color: #424242;
     margin: 2rem 0.6rem;
+    max-width: 400px;
 }
 
 .card_heart {
