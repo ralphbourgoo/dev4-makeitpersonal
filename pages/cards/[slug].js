@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import styles from './Card.module.css'
 import Skeleton from '../../components/Skeleton'
+import { useRef, useState } from 'react';
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -51,6 +52,15 @@ export async function getStaticProps({ params }) {
 }
 
 export default function CardDetails({ card }) {
+    const [copySuccess, setCopySuccess] = useState('');
+    const textAreaRef = useRef(null);
+    function copyToClipboard(e) {
+        textAreaRef.current.select();
+        document.execCommand('copy');
+        e.target.focus();
+        setCopySuccess('Copied Link!');
+    };
+
     if (!card) return <Skeleton />
     console.log(card)
     const { imagejson, title, receiver, sender, message, slug } = card.fields
@@ -91,7 +101,21 @@ export default function CardDetails({ card }) {
             <div className={styles.link_wrapper}>
                 <h2 className={styles.link_title}>Share this link</h2>
                 <p className={styles.text}>Share this link, to send your mother the personalised card. Have a great mothersday !</p>
-                <p className={styles.link}>{`http://localhost:3000/cards/${slug}`}</p>
+                <div className={styles.copy_wrapper}>
+                    <textarea
+                        className={styles.copy_area}
+                        ref={textAreaRef}
+                        rows='1'
+                        value={`http://localhost:3000/cards/${slug}`}
+                        // onChange={defaultValue}
+                    />
+                    <div className={styles.success_wrapper}>
+                        <button className={styles.copy_button} onClick={copyToClipboard}>Copy Link</button>
+                        <p className={styles.success}>{copySuccess}</p>
+                    </div>
+                </div>
+                {/* <p className={styles.link}>{`http://localhost:3000/cards/${slug}`}</p> */}
+                
             </div>
         </div>
     )
