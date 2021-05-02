@@ -92,8 +92,8 @@ export default function CardDetails({ card }) {
                         <Image
                             src='/heart.svg'
                             alt='Love Mom Heart'
-                            width='150'
-                            height='150'
+                            width='120'
+                            height='120'
                         />
                     </div>
                 </div>
