@@ -89,12 +89,20 @@
 
 @media (max-width: 990px) {
   .home_container {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .home_img {
     margin-bottom: 0.01rem;
   }
+
+  .home_img {
+    max-width: 31rem;
+}
+
+.home_title {
+    font-size: 3rem;
+}
 }
 
 @media (max-width: 400px) {
