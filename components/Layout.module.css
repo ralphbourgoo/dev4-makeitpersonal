@@ -5,6 +5,10 @@
   align-items: center;
   padding: 3rem;
   height: 80px;
+  border-bottom: .15rem solid #424242;
+  width: 90vw;
+   max-widtth: 100rem;
+   margin: 0 auto;
 }
 
 .nav_items {
