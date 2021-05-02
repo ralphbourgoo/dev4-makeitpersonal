@@ -60,6 +60,8 @@ input {
     font-weight: 600;
     transition: .5s;
     margin-top: 1rem;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 .submit:hover {
