@@ -1,14 +1,81 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* background-color: #FFCDB6; */
-    padding: 2rem;
-    width: 90vw;
-    max-widtth: 100rem;
-    margin: 0 auto;
-    border-bottom: .15rem solid #424242;
+  display: flex;
+  background: #FFEEE6;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  height: 80px;
 }
+
+.nav_items {
+  padding-left: 25px;
+  display: flex;
+}
+
+.mobile_option {
+  display: none;
+}
+
+.mobile_menu {
+  display: none;
+}
+
+@media (max-width: 867px) {
+   .header {
+       padding: 3rem;
+   }
+
+  .nav_items {
+    display: flex;
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+  }
+
+  .nav_itemsactive {
+    background: #FFCDB6;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+    align-content: center;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    top: 75px;
+     align-items: center;
+    justify-content: center;
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navlink {
+      margin-bottom: 2rem;
+      border-bottom: .2rem solid #FFCDB6;
+      font-size: 1.4rem;
+      margin-left: unset;
+  }
+
+  .mobile_menu {
+    display: block;
+  }
+}
+
 
 .logo {
     font-family: 'Playfair Display';
@@ -81,4 +148,25 @@
 .navbutton:hover {
     background-color: #FFEEE6;
     color: #424242;
+}
+
+@media (max-width: 400px) {
+  .footer {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .footer_logo {
+      margin: unset;
+  }
+}
+
+@media (max-width: 450px) {
+  .logo {
+      font-size: 1.5rem;
+  }
+
+  .header {
+      padding: 2rem;
+  }
 }
