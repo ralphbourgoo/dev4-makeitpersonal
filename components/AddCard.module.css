@@ -1,8 +1,8 @@
-input {
+/* input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-}
+} */
 
 .form {
     display: flex;
