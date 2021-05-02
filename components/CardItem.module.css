@@ -1,12 +1,13 @@
 .carditem {
     background-color: #FFF9F2;
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    max-width: 20rem;
+    justify-content: flex-start;
+    max-width: 35rem;
+    width: 90vw;
     padding: 2rem;
     margin: 2rem;
+    border: .2rem solid #424242;
 }
 
 .carditem_image {
@@ -17,7 +18,7 @@
     font-family: 'Poppins';
     font-size: 1.6rem;
     font-weight: 600;
-    color: #F2C8C9;
+    color: #FFCDB6;
     margin: 1rem 0;
 }
 
@@ -26,18 +27,28 @@
     font-size: 1.2rem;
     font-weight: 200;
     color: #424242;
-    margin: 0.4rem 0;  
+    margin-bottom: 3rem;
 }
 
-.carditem_button  {
-    display: block;
-    padding: 1rem;
-    border: .2rem solid #F2C8C9;
+.carditem_button {
+    background-color: #FFCDB6;
+    color: #424242;
     font-family: 'Poppins';
     font-size: 1rem;
-    color: white;
-    background-color: #F2C8C9;
-    text-decoration: none;
     font-weight: 600;
-    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border: .2rem solid #424242;
+    transition: .5s;
+    margin-top: 3rem;
+}
+
+.carditem_button:hover {
+    color: #424242;
+    background-color: #FFEEE6;
+}
+
+.carditem_content {
+    margin-left: 4rem;
+    max-width: 10rem;
 }

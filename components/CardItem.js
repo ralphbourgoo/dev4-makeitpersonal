@@ -9,22 +9,19 @@ export default function CardItem({ card }) {
         <div className={styles.carditem}>
             <div className={styles.carditem_image}>
                 <Image
-                    src={'/heart.svg'}
+                    src={imagejson.url}
                     width={300}
                     height={300}
                 />
-                {/* <Image
-                    src={'https:' + image.fields.file.url}
-                    width={image.fields.file.details.image.width}
-                    height={image.fields.file.details.image.height}
-                /> */}
             </div>
-            <div className="content">
-                <h2 className={styles.carditem_title}>{title}</h2>
-                <p className={styles.carditem_sender}>from {sender}</p>
-            </div>
-            <div>
-                <Link href={'/cards/' + slug}><a className={styles.carditem_button}>Look at card</a></Link>
+            <div className={styles.carditem_content}>
+                <div className="content">
+                    <h2 className={styles.carditem_title}>{title}</h2>
+                    <p className={styles.carditem_sender}>from {sender}</p>
+                </div>
+                <div>
+                    <Link href={'/cards/' + slug}><a className={styles.carditem_button}>Look at card</a></Link>
+                </div>
             </div>
         </div>
     )

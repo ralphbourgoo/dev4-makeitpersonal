@@ -24,7 +24,7 @@ export default function Cards({ cards }) {
         <div>
             <div className={styles.page_header}>
                 <h1 className={styles.page_title}>Discover other cards</h1>
-                <p className={styles.page_sub}>Have a look at cards other users.</p>
+                <p className={styles.page_sub}>Have a look at cards from other users.</p>
             </div>
             <div className={styles.cards_list}>
                 {cards.map(card => (
