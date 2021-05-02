@@ -150,3 +150,38 @@
     margin-left: 2rem;
     max-width: 400px;
 }
+
+@media (max-width: 950px) {
+  .card {
+      flex-direction: column;
+      padding: 1.3rem;
+  }
+
+  .card_image {
+    max-width: 28rem;
+    width: 70vw;
+}
+
+.card_content {
+    margin-left: unset;
+}
+}
+
+@media (max-width: 932px) {
+    .copy_wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .copy_button {
+        margin-left: unset;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 566px) {
+    .copy_area {
+        height: 10rem;
+    }
+}
