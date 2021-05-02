@@ -11,7 +11,7 @@ export default function Home() {
         <p className={styles.text}>Looking for a unique and personalised motherday present? Then this can be something for you. Create a personalised motherday card. You can send this unique link to your mother and surprise her with a lovely message.  </p>
         <div className={styles.button_wrapper}>
           <Link href="/form"><a className={styles.home_button}>Send a card</a></Link>
-          <Link href="/form"><a className={styles.home2_button}>Learn More</a></Link>
+          <Link href="/about"><a className={styles.home2_button}>Learn More</a></Link>
         </div>
       </div>
       <div className={styles.home_img}>
