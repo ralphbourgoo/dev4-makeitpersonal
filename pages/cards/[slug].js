@@ -106,7 +106,7 @@ export default function CardDetails({ card }) {
                         className={styles.copy_area}
                         ref={textAreaRef}
                         rows='1'
-                        value={`http://localhost:3000/cards/${slug}`}
+                        value={`https://dev4-makeitpersonal.vercel.app/cards/${slug}`}
                         // onChange={defaultValue}
                     />
                     <div className={styles.success_wrapper}>
@@ -114,8 +114,6 @@ export default function CardDetails({ card }) {
                         <p className={styles.success}>{copySuccess}</p>
                     </div>
                 </div>
-                {/* <p className={styles.link}>{`http://localhost:3000/cards/${slug}`}</p> */}
-                
             </div>
         </div>
     )
