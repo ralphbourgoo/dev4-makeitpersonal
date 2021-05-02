@@ -69,16 +69,22 @@ export default function CardDetails({ card }) {
         <div className={styles.wrapper}>
             <div className={styles.card}>
                 <div className={styles.card_image}>
-                    <Image
+                    <div style={{
+                        backgroundImage: `url(${imagejson.url})`,
+                        width: 450,
+                        height: 450,
+                        backgroundSize: `cover`,
+                        backgroundPosition: `center`,
+                        backgroundRepeat: `no-repeat`,
+                        maxWidth: `70vw`,
+                        maxHeight: `70vw`
+                    }}>
+                    </div>
+                    {/* <Image
                         src={imagejson.url}
                         alt='Cloudinary Image'
                         width='500'
                         height='500'
-                    />
-                    {/* <Image
-                        src={'https:' + image.fields.file.url}
-                        width={image.fields.file.details.image.width}
-                        height={image.fields.file.details.image.height}
                     /> */}
                 </div>
                 <div className={styles.card_content}>

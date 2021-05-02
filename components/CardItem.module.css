@@ -10,11 +10,6 @@
     border: .2rem solid #424242;
 }
 
-.carditem_image {
-    max-width: 14rem;
-    width: 70vw;
-}
-
 .carditem_title {
     font-family: 'Poppins';
     font-size: 1.6rem;
@@ -51,26 +46,16 @@
 
 .carditem_content {
     margin-left: 2rem;
-    max-width: 10rem;
+    max-width: 30rem;
 }
 
 @media (max-width: 1240px) {
   .carditem {
       max-width: 41rem;
   }
-
-  .carditem_image {
-    max-width: 20rem;
-    width: 70vw;
-  }
 }
 
 @media (max-width: 642px) {
-  .carditem_image {
-    max-width: 12rem;
-    width: 70vw;
-  }
-
   .carditem_content {
     margin-left: 2rem;
   }
@@ -80,15 +65,27 @@
   .carditem {
       flex-direction: column;
       max-width: 26rem;
+      justify-content: center;
+      align-items: center;
   }
 
   .carditem_image {
-    max-width: 25rem;
-    width: 70vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
   }
 
   .carditem_content {
     margin-left: unset;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.carditem_title {
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
 }
 
