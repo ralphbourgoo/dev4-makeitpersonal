@@ -6,7 +6,7 @@ const About = () => {
     return ( 
         <div className={styles.wrapper}>
             <h1 className={styles.page_title}>About</h1>
-            <p className={styles.text}>Create a personal message, that means something.</p>
+            <p className={styles.subtext}>Create a personal message, that means something.</p>
             <div className={styles.section_wrapper}>
                 <div className={styles.img}>
                     <Image
@@ -16,7 +16,7 @@ const About = () => {
                         height='900'
                     />
                 </div>
-                <div>
+                <div className={styles.content_section}>
                     <h2 className={styles.sub}>The concept</h2>
                     <p className={styles.text}>With Motherday Card you can send you mother a personalised mothersday card. Mothers love surprises, but some kind words and a memory, will melt their hearts. .</p>
                     <p className={styles.text}>You can type your personal message, add a photo, and address your receiver. When your created your message, you can send a unique link to your mother, who can view your message. Discover the messages from other users on the overview page.</p>

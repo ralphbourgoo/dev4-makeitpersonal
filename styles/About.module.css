@@ -13,7 +13,23 @@
     color: #424242;
     margin: 1rem 0;
     max-width: 30rem;
-    width: 90vw;
+    width: 40vw;
+}
+
+.subtext {
+   font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 200;
+    color: #424242;
+    margin: 1rem 0;
+    max-width: 30rem;
+    width: 80vw; 
+    text-align: center;
+}
+
+.content_section {
+    max-width: 30rem;
+    width: 40vw;
 }
 
 .wrapper {
@@ -44,6 +60,8 @@
 .section_wrapper {
    display: flex;
    justify-content: center;
+   max-width: 100rem;
+   width: 90vw;
 }
 
 .step_section {
@@ -114,4 +132,39 @@
 
 .button_wrap {
     margin-top: 3rem;
+}
+
+@media (max-width: 1200px) {
+  .steps_wrapper {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .section_wrapper {
+   flex-direction: column;
+   align-items: center;
+  } 
+
+  .content_section {
+    width: 80vw;
+    max-width: unset;
+  }
+
+  .text {
+      max-width: unset;
+      width: unset;
+  }
+
+  .img {
+    max-width: unset;
+    width: 80vw;
+    margin-right: unset;
+  }
+}
+
+@media (max-width: 600px) {
+  .steps_wrapper {
+      grid-template-columns: repeat(1, 1fr);
+  }
 }
